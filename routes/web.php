@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 Auth::routes();
 
@@ -54,7 +54,3 @@ Route::get('/hapus_peminjaman/{id}', 'DataController@hapus_peminjaman');
 // User
 Route::get('/ubah_user', 'DataController@ubah_user')->name('ubah_user');
 Route::post('/proses_edit_user', 'DataController@proses_edit_user')->name('proses_edit_user');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
